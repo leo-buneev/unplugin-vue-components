@@ -281,8 +281,7 @@ async function transformComponent(code, transformer2, s, ctx, sfcPath) {
     const component = await ctx.findComponent(name, "component", [sfcPath]);
     if (component) {
       const varName = `__unplugin_components_${no}`;
-      s.prepend(`${_chunk2VBGH4A4js.stringifyComponentImport.call(void 0, { ...component, as: varName }, ctx)};
-`);
+      s.prepend(`${_chunk2VBGH4A4js.stringifyComponentImport.call(void 0, { ...component, as: varName }, ctx)};`);
       no += 1;
       replace(varName);
     }
@@ -413,8 +412,6 @@ function transformer(ctx, transformer2) {
       await transformDirective(code, transformer2, s, ctx, sfcPath);
     s.prepend(_chunk2VBGH4A4js.DISABLE_COMMENT);
     const result = { code: s.toString() };
-    if (ctx.sourcemap)
-      result.map = s.generateMap({ source: id, includeContent: true, hires: true });
     return result;
   };
 }

@@ -31,8 +31,8 @@ export default function transformer(ctx: Context, transformer: SupportedTransfor
     s.prepend(DISABLE_COMMENT)
 
     const result: TransformResult = { code: s.toString() }
-    if (ctx.sourcemap)
-      result.map = s.generateMap({ source: id, includeContent: true, hires: true })
+    // if (ctx.sourcemap)
+    //   result.map = s.generateMap({ source: id, includeContent: true, hires: true })
     return result
   }
 }
